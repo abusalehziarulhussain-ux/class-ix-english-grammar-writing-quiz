@@ -77,7 +77,7 @@ const rows=[
 ['Which is the most appropriate ending for a report on a school cleanliness drive?',['“Anyway, that\'s all. Bye!”','“The programme concluded with a vote of thanks to all participants and volunteers.”','“I wish I could tell you more about my family.”','“The story continues tomorrow.”'],'B','A concise, formal closing that records how the programme ended suits a report.','Report writing']
 ];
 // Paste your deployed Google Apps Script web app URL here before sharing this page.
-const RESULTS_ENDPOINT='PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+const RESULTS_ENDPOINT='https://script.google.com/macros/s/AKfycbxDW3MNDZsSyTf6JK_L0fBB_YmN-ActYaD3bVGL-agNtYnJm3DTmbXAHrSSP4l-FKMe/exec';
 const answers=Array(60).fill(null);let current=0,submitted=false,remaining=3600,tick=null;
 const $=id=>document.getElementById(id);const letters=['A','B','C','D'];
 function renderNav(){const n=$('navgrid');n.innerHTML='';rows.forEach((_,i)=>{const b=document.createElement('button');b.className='navbtn'+(i===current?' active':'')+(answers[i]!==null?' answered':'');b.textContent=i+1;b.setAttribute('aria-label',`Go to question ${i+1}${answers[i]!==null?', answered':''}`);b.onclick=()=>{current=i;render()};n.appendChild(b)});const count=answers.filter(x=>x!==null).length;$('progressText').textContent=`${count} / 60`;$('progressFill').style.width=`${count/60*100}%`}
